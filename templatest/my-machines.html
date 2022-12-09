@@ -1,0 +1,62 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}My devices{% endblock %} 
+{% block extra_head %} Below is the list of mining machines you bought. {% endblock %} 
+{% block content %}
+
+
+
+
+
+<div class="main-panel bg-dark">
+    <div class="content bg-dark">
+        <div>
+</div>					<div class="mb-12 row">
+            <div class="col text-center card p-12 bg-dark">
+                
+                    <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+
+                          <h4 class="pt-3 nav-item nav-link active " id="nav-home-tab" data-toggle="tab" href="#1" role="tab" aria-controls="nav-home" aria-selected="true"> Miners</h4>
+
+                          </div>
+                    </nav>
+                    
+                    <div class="px-3 py-3 tab-content px-sm-0" id="nav-tabContent">
+
+                        
+                        <div class="tab-pane fade show active bg-dark card p-3" id="1" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="bs-example widget-shadow table-responsive" data-example-id="hoverable-table"> 
+                            <table id="UserTable" class="UserTable table table-hover text-light"> 
+                                    <thead> 
+                                        <tr> 
+                                            <th class="text-light">Device</th>
+                                            <th class="text-light">Name</th>
+                                            <th class="text-light">Profit</th> 
+                                            <th class="text-light">Date created</th>
+                                        </tr> 
+                                    </thead> 
+                                    {% for machine in machine1 %}
+                                    <tbody> 
+                                        <tr> 
+                                            <td> <img class="imagey" src="{{ machine.Image.url }}"></td>
+                                            <td class="mdi mdi-arrow-up-bold text-success">{{ machine.Name }} TRX</td>
+                                            <td class="text-success">{{ machine.Profit }}TRX per 12hr</td>
+                                            <td class="text-light">{{ machine.Date }}</td>
+                                            
+                                        </tr> 
+                                    </tbody>  
+                                    
+                                    {% endfor %}
+                            </table>
+                            </div>
+                        </div>
+
+                        
+                        
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+{% endblock %} 

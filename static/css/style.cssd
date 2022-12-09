@@ -1,0 +1,285 @@
+/* Profile sidebar */
+
+.pricing-table {
+    background: #fff;
+    box-shadow: 0px 1px 10px -6px rgba(0, 0, 0, .15);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.pricing-table:hover {
+    box-shadow: 0px 1px 10px -4px rgba(0, 0, 0, .15);
+}
+
+.pricing-table .pricing-label {
+    border-radius: 2px;
+    padding: .25rem .5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.pricing-table h2 {
+    color: #3b3b3b;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.pricing-table h5 {
+    color: #B3B3B3;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.pricing-table .pricing-features {
+    margin-top: 2rem;
+}
+
+.pricing-table .pricing-features .feature {
+    font-size: 14px;
+    margin: .5rem 0;
+    color: #B3B3B3;
+}
+
+.pricing-table .pricing-features .feature span {
+    display: inline-block;
+    float: right;
+    color: #3b3b3b;
+    font-weight: 500;
+}
+
+.pricing-table .price-tag {
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.pricing-table .price-tag .symbol {
+    font-size: 24px;
+}
+
+.pricing-table .price-tag .amount {
+    letter-spacing: -2px;
+    font-size: 64px;
+}
+
+.pricing-table .price-tag .after {
+    color: #3b3b3b;
+    font-weight: 500;
+}
+
+.pricing-table .price-button {
+    display: block;
+    color: #fff;
+    margin-top: 2rem;
+    padding: .75rem;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.pricing-table .price-button:hover {
+    text-decoration: none;
+}
+
+.purple .pricing-label {
+    background: #cad2ff;
+    color: #627afe;
+}
+
+.purple .price-tag {
+    color: #627afe;
+}
+
+.purple .price-button {
+    background: #627afe;
+}
+
+.purple .price-button:hover {
+    background: #546dfe;
+}
+
+.turquoise .pricing-label {
+    background: #b9edee;
+    color: #44cdd2;
+}
+
+.turquoise .price-tag {
+    color: #44cdd2;
+}
+
+.turquoise .price-button {
+    background: #44cdd2;
+}
+
+.turquoise .price-button:hover {
+    background: #2dbcc4;
+}
+
+.red .pricing-label {
+    background: #ffc4c4;
+    color: #ff5e5e;
+}
+
+.red .price-tag {
+    color: #ff5e5e;
+}
+
+.red .price-button {
+    background: #ff5e5e;
+}
+
+.red .price-button:hover {
+    background: #f23c3c;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+  
+  .alert-heading {
+    color: inherit;
+  }
+  
+  .alert-link {
+    font-weight: 700;
+  }
+  
+  .alert-dismissible {
+    padding-right: 3.90625rem;
+  }
+  .alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+  }
+  
+  .alert-primary {
+    color: #ece2f9;
+    background-color: #9e6de0;
+    border-color: #9e6de0;
+  }
+  .alert-primary hr {
+    border-top-color: #9058dc;
+  }
+  .alert-primary .alert-link {
+    color: #d0b8f0;
+  }
+  
+  .alert-secondary {
+    color: #ffdce9;
+    background-color: #fd5190;
+    border-color: #fd5190;
+  }
+  .alert-secondary hr {
+    border-top-color: #fd3880;
+  }
+  .alert-secondary .alert-link {
+    color: #ffa9c9;
+  }
+  
+  .alert-success {
+    color: #cef5e8;
+    background-color: #0acb8e;
+    border-color: #0acb8e;
+  }
+  .alert-success hr {
+    border-top-color: #09b37d;
+  }
+  .alert-success .alert-link {
+    color: #a4ecd4;
+  }
+  
+  .alert-info2 {
+    color: #cdf4f9;
+    background-color: #04c7e0;
+    border-color: #04c7e0;
+  }
+  .alert-info2 hr {
+    border-top-color: #04b1c7;
+  }
+  .alert-info2 .alert-link {
+    color: #9feaf4;
+  }
+  
+  .alert-warning {
+    color: #fff3cc;
+    background-color: #fec400;
+    border-color: #fec400;
+  }
+  .alert-warning hr {
+    border-top-color: #e5b000;
+  }
+  .alert-warning .alert-link {
+    color: #ffe799;
+  }
+  
+  .alert-info {
+    color: #ffdddf;
+    background-color: #fe5461;
+    border-color: #fe5461;
+  }
+  .alert-info hr {
+    border-top-color: #fe3b4a;
+  }
+  .alert-info .alert-link {
+    color: #ffaaaf;
+  }
+  
+  .alert-light {
+    color: #fcfcfd;
+    background-color: #f0f1f5;
+    border-color: #f0f1f5;
+  }
+  .alert-light hr {
+    border-top-color: #e1e3eb;
+  }
+  .alert-light .alert-link {
+    color: #dddde9;
+  }
+  
+  .alert-dark {
+    color: #d6d6d8;
+    background-color: #31343d;
+    border-color: #31343d;
+  }
+  .alert-dark hr {
+    border-top-color: #26282f;
+  }
+  .alert-dark .alert-link {
+    color: #bcbcbf;
+  }
+  
+  .alert-info2-dark {
+    color: #e0e9fe;
+    background-color: #6493fa;
+    border-color: #6493fa;
+  }
+  .alert-info2-dark hr {
+    border-top-color: #4b82f9;
+  }
+  .alert-info2-dark .alert-link {
+    color: #afc6fc;
+  }
+  
+  .alert-smoke {
+    color: #e8e9eb;
+    background-color: #8a909d;
+    border-color: #8a909d;
+  }
+  .alert-smoke hr {
+    border-top-color: #7c8391;
+  }
+  .alert-smoke .alert-link {
+    color: #cdcfd3;
+  }

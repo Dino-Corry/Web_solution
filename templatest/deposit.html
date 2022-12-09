@@ -1,0 +1,176 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}Fund your wallet{% endblock %} 
+{% block extra_head %} Dias Chain is accepting TRX at the moment {% endblock %} 
+{% block content %}
+<div>
+</div>  
+				<div class="mb-5 row">
+					<div class="col-lg-8 offset-md-2">
+						<div class="p-md-4 p-2 rounded card bg-dark">
+								  <div class="alert alert-info alert-icon" role="alert">
+									<i class="mdi mdi-alert-circle-outline"></i> Your deposit will reflect upon confirmation.
+								  </div>
+
+							<!-- TradingView Widget BEGIN -->
+{% comment %} <div class="tradingview-widget-container">
+	<div id="tradingview_ad899"></div>
+	
+	<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+	<script type="text/javascript">
+	new TradingView.widget(
+	{
+	"width": 650,
+	"height": 200,
+	"symbol": "BINANCE:TRXUSD",
+	"interval": "1",
+	"timezone": "Etc/UTC",
+	"theme": "dark",
+	"style": "8",
+	"locale": "en",
+	"toolbar_bg": "#f1f3f6",
+	"enable_publishing": true,
+	"hide_top_toolbar": true,
+	"hide_legend": true,
+	"withdateranges": true,
+	"hide_side_toolbar": false,
+	"allow_symbol_change": true,
+	"save_image": false,
+  }
+	);
+	</script>
+  </div> {% endcomment %}
+  <!-- TradingView Widget END -->
+  <br>
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-icon" role="alert">
+	<i class="mdi mdi-checkbox-marked-outline"></i> {{message}}
+  </div>
+  {% endfor %}
+  {% for balance in balance %}
+  <p>Avalaible Balance: {{ balance.Amount }} TRX</p>
+  {% endfor %}
+  <div class="alert alert-dark alert-dismissible fade show" role="alert">
+	<h5 class="card-header text-white">How to deposite</h5>
+	<div class="card-body">
+	<strong>Click the button below to generate deposit address and input your Amount. 
+		Please not, any deposit made after the timer will not be taking into account.</strong>
+		<li class="text-danger">Send only TRX to the deposit address.
+		<li class="text-danger">Ensure the network is equivalent to the generated deposit address.
+		<li class="text-danger">Your amount must be equivalent also to avoid lost of funds.
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	  <span class="text-white" aria-hidden="true">×</span>
+	</button>
+	</div>
+  </div>
+<div class="d-md-block d-none">
+								<button type="button" class="btn btn-success btn-pill" data-toggle="modal" data-target="#exampleModalForm">
+
+									(BEP20) Generate Address 
+								  </button>
+								  
+								  <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle"
+									aria-hidden="true">
+									<div class="modal-dialog" role="document">
+									  <div class="modal-content">
+										<div class="modal-header">
+										  <h5 class="modal-title" id="exampleModalFormTitle">BEP20 h Deposit Address</h5>
+										  
+										</div>
+										<div id="timer"></div>
+										<div class="imageh">
+											<img src="{% static 'imageicons/Add1.jpg' %}" alt="TRX Deposit Address">
+										  </div>
+										<div class="containerh">
+											<div class="copy-text">
+											  <input type="text" class="text" value="0x544cd0e39cd166962e9a7c241694d436b6050361" readonly>
+											  <button>
+												Copy
+											  </button>
+											</div>
+										  </div>
+										<div class="modal-body">
+
+										<form method="POST" action="deposit">
+											{% csrf_token %}
+											<div class="form-group">
+											<div class="form-group">
+											  <label for="exampleInputPassword1">Deposit Amount</label>
+											  <li class="text-danger">Send only TRX to this deposit address.
+												<li class="text-danger">Ensure the network is BNB Smart Chain (BEP20).
+													<li class="text-danger">Your amount must be equivalent to avoid lost of funds.
+											  <input type="number" class="form-control" name="Input_Amount" placeholder="Enter your amount" required>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+												<button type="submit" class="btn btn-success">Sent</button>
+											  </div>
+										  </form>
+										</div>
+									  </div>
+									</div>
+								  </div>
+								</div>
+
+
+								<button type="button" class="btn btn-success btn-pill" data-toggle="modal" data-target="#exampleModalForm2">
+									(TRC20) Generate Address
+								  </button>
+								  
+								  <div class="modal fade" id="exampleModalForm2" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle"
+									aria-hidden="true">
+									<div class="modal-dialog" role="document">
+									  <div class="modal-content">
+										<div class="modal-header">
+										  <h5 class="modal-title" id="exampleModalFormTitle">TRC20 Deposit Address</h5>
+										</div>
+										<div id="app"></div>
+										<div class="imageh">
+											<img src="{% static 'imageicons/Add1.jpg' %}" alt="TRX Deposit Address">
+										  </div>
+										<div class="containerh">
+											<div class="copy-text">
+											  <input type="text" class="text" value="0x544cd0e39cd166962e9a7c241694d436b6050361" readonly>
+											  <button>
+												Copy
+											  </button>
+											</div>
+										  </div>
+										<div class="modal-body">
+										  <form method="POST" action="deposit">
+											{% csrf_token %}
+											<div class="form-group">
+											<div class="form-group">
+											  <label for="exampleInputPassword1">Deposit Amount</label>
+											  <li class="text-danger">Send only TRX to this deposit address.
+												<li class="text-danger">Ensure the network is BNB Smart Chain (BEP20).
+													<li class="text-danger">Your amount must be equivalent to avoid lost of funds.
+											  <input type="number" class="form-control" name="Input_Amount" id="exampleInputPassword1" placeholder="Enter your amount" required>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+												<button type="submit" class="btn btn-success">Sent</button>
+											  </div>
+										  </form>
+										</div>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

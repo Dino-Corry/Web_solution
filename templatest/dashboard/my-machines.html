@@ -1,0 +1,85 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+<div class="main-panel bg-dark">
+    <div class="content bg-dark">
+        <div>
+</div>					<div class="mb-5 row">
+            <div class="col text-center card p-4 bg-dark">
+                
+                    <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+
+                          <h4 class="pt-3 nav-item nav-link active " id="nav-home-tab" data-toggle="tab" href="#1" role="tab" aria-controls="nav-home" aria-selected="true">purchased mining machines
+                        </h4>
+                        </div>
+                    </nav>
+                    
+                    <div class="px-3 py-3 tab-content px-sm-0" id="nav-tabContent">
+
+                        
+                        <div class="tab-pane fade show active bg-dark card p-3" id="1" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="bs-example widget-shadow table-responsive" data-example-id="hoverable-table"> 
+                            <table id="UserTable" class="UserTable table table-hover text-white"> 
+                                    <thead> 
+                                        <tr> 
+                                            <th class="text-white">Device</th>
+                                            <th class="text-white">Name</th>
+                                            <th class="text-white">Total Generated</th> 
+                                            <th class="text-white">Date bought</th>
+                                        </tr> 
+                                    </thead> 
+                                    <tbody class="text-success"> 
+                                        <tr> 
+                                            {% for deposit in deposit %}
+                                            {% if deposit.Approved == True %}
+                                            <td class="mdi mdi-arrow-up-bold text-success">{{deposit.Deposit_Amount}} TRX</td> 
+                                            <td class="text-success">Deposit</td>
+                                            <td class="text-sucess">Successful</td>
+                                            <td class="text-success">{{deposit.Date}}</td>
+                                            {% else %}
+                                            {% endif %}
+                                            {% endfor %}
+                                        </tr> 
+                                    </tbody>  
+                                </table>
+                            </div>
+                        </div>
+
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <!-- /plans Modal -->
+    <script type="text/javascript">
+        function calcAmount(sub) {
+            if(sub.value=="Quaterly"){
+                var amount = document.getElementById('amount');
+                var amountpay = document.getElementById('amountpay');
+                amount.value = '$40';
+                amountpay.value = '40';
+            }if(sub.value=="Yearly"){
+                var amount = document.getElementById('amount');
+                var amountpay = document.getElementById('amountpay');
+                amount.value = '$80';
+                amountpay.value = '80';
+            }if(sub.value=="Monthly"){
+                var amount = document.getElementById('amount');
+                var amountpay = document.getElementById('amountpay');
+                amount.value = '$30';
+                amountpay.value = '30';
+            }
+        }
+        </script>	
+
+{% endblock %} 
